@@ -3,12 +3,146 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!--АДАПТИВКА-->
+    <link rel="stylesheet" type="text/css" href="controllpanel.css">
     <title>Document</title>
+    <script src="https://unpkg.com/react@16/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/babel-standalone@6.15.0/babel.min.js"></script>
+    <div id="topPanel">
+        <img src="textures/globusIcon.png" alt="" id="globusIcon">
+        <p>World Domination</p>
+        <img src="textures/ecologyIcon.png" alt="" id="topEcologyIcon">
+        <p id="ecologyLevel">100%</p>
+        <p id="roundCount">Раунд 1</p>
+    </div>
 </head>
 <body>
-    <h1>АА</h1>
-    <h2>АА</h2>
-    
+    <div class="mainInfo" id="mainInfoId">
+        <div id="resources">
+            <p id="countryName">USA</p>
+            <img src="textures/USAFlag.png" id="countryFlag">
+            <div id="coinAndShieldUI">
+                <div id="coinUI">
+                    <img src="textures/coinIcon.png" id="coinIcon">
+                    <p id="coinCount">0</p>
+                </div>
+                <div id="shieldUI">
+                    <img src="textures/shieldIcon.png" id="resourcesShieldIcon">
+                    <p id="shieldCount" class="shieldCount1">0</p>
+                </div>
+            </div>
+            <div id="weaponUI">
+                <img src="textures/weaponIcon.png" id="resourcesWeaponIcon">
+                <p id="weaponCount" class="weaponCount1">0</p>
+            </div>
+        </div>
+        <p id="country">США</p>
+        <div id="cities">
+            <div class="city">
+                <p id="city">Город</p>
+                <p id="amountOfCoin">Доход</p>
+                <p id="levelOfLife">Уровень жизни</p>
+                <p id="shield">Щит</p>
+            </div>
+            <div class="city1">
+                <p id="city1">first</p>
+                <p id="amountOfCoin1">300</p>
+                <p id="levelOfLife1">100</p>
+                <p id="shield1">-</p>
+            </div>
+            <div class="city2">
+                <p id="city2">first</p>
+                <p id="amountOfCoin2">300</p>
+                <p id="levelOfLife2">100</p>
+                <p id="shield2">-</p>
+            </div>
+            <div class="city3">
+                <p id="city3">first</p>
+                <p id="amountOfCoin3">300</p>
+                <p id="levelOfLife3">100</p>
+                <p id="shield3">-</p>
+            </div>
+            <div class="city4">
+                <p id="city4">first</p>
+                <p id="amountOfCoin4">300</p>
+                <p id="levelOfLife4">100</p>
+                <p id="shield4">-</p>
+            </div>
+        </div>
+        <div class="shopAndPrikaz">
+        <p id="shopName">Штаб</p>
+            <div id="shop">
+                <!-- 
+                <div id="buyShield">
+                    <p>Щит</p>
+                    <button id="buyShieldButton" class="buttonStyle1">Купить</button>
+                </div>
+                <div id="buyBomb">
+                    <p>Ядерное оружие</p>
+                    <button id="buyBombButton" class="buttonStyle1">Купить</button>
+                </div>
+                <div id="buyEco">
+                    <p>Вложиться в экологию</p>
+                    <button id="buyEcoButton" class="buttonStyle1">Купить</button>
+                </div> -->
+                <div class="shopImages">
+                    <img src="textures/shieldIcon.png" id="shieldIcon">
+                    <img src="textures/ecologyIcon.png" id="ecologyIcon">
+                    <img src="textures/weaponIcon.png" id="weaponIcon">
+                </div>
+                <div class="shopNames">
+                    <p id="shopShield">Щит</p>
+                    <p id="shopEcology">Экология</p>
+                    <p id="shopWeapon">Ядерное Оружие</p>
+                </div>
+                <div class="shopItemCost">
+                    <p id="shieldCost">100</p>
+                    <p id="ecologyCost">100</p>
+                    <p id="weaponCost">100</p>
+                </div>
+                <div class="shopButtons">
+                    <input type="button" value="Купить" class="buttonStyle1">
+                    <input type="button" value="Купить" class="buttonStyle2">
+                    <input type="button" value="Купить" class="buttonStyle3">
+                </div>
+            </div>
+            <p id="prikazName">Приказ</p>
+            <div id="prikaz">
+                <div class="prikazButtons">
+                    <button id="placeShieldButton" class="buttonStyle2">Установить щит</button>
+                    <button id="placeBombButton" class="buttonStyle2">Применить ядерное оружие</button>
+                    <button id="makeMeetingButton" class="buttonStyle2">Предложить переговоры</button>
+                </div>
+                <div class="prikazNumbers">
+                    <p id="shieldCount" class="shieldCount2">1</p>
+                    <p id="weaponCount" class="weaponCount2">1</p>
+                    <p id="meetingCount">1</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="root"></div>
+    <script src="controllpanel.js"></script>
+    <script type="text/babel"> 
+    // const App = () => {
+    //     return <p>Всем привет, аа</p>
+    // }
+    // class BigApp extends React.Component {
+    //     render(){
+    //         return (
+    //             <div>
+    //                 <h1>Аа</h1>
+    //                 <p className="buttonStyle1">Аа</p>
+    //                 <App />
+    //             </div>
+    //         )
+    //     }
+    // }
+    //     ReactDOM.render( 
+    //         <BigApp />,
+    //         document.getElementById('root') 
+    //     ); 
+        </script>
 </body>
 </html>
