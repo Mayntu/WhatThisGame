@@ -1,0 +1,445 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@600&display=swap');
+body
+{
+    background-color: #0D1117;
+    font-family: 'Inter', sans-serif;
+}
+#topPanel
+{
+    color: white;
+    background-color: #2B3137;
+    display: flex;
+    flex-direction: row;
+    height: 117px;
+    font-size: 37px;
+}
+#ecologyLevel
+{
+    color: #3FC675;
+    padding-left: 20px;
+}
+#roundCount
+{
+    padding-left: 65px;
+}
+#resources
+{
+    display: flex;
+    flex-direction: column;
+    font-size: 40px;
+    width: 275px;
+    position: relative;
+    left: 1400px;
+}
+#countryName
+{
+    color: white;
+    text-align: center;
+    position: relative;
+    bottom: -30px;
+}
+#countryFlag
+{
+    height: 144px;
+    width: 273px;
+}
+#coinIcon
+{
+    height: 69px;
+    width: 69px;
+    padding-top: 25px;
+}
+#coinCount
+{
+    color: #FFEFCA;
+}
+#resourcesShieldIcon
+{
+    height: 73px;
+    width: 73px;
+    padding-top: 25px;
+}
+#resourcesWeaponIcon
+{
+    height: 100px;
+    width: 100px;
+    transform: rotate(234deg);
+}
+#coinUI
+{
+    display: flex;
+    flex-direction: row;
+}
+#coinCount
+{
+    padding-left: 5px;
+}
+#shieldUI
+{
+    display: flex;
+    flex-direction: row;
+}
+#shieldCount
+{
+    padding-left: 5px;
+}
+#weaponUI
+{
+    display: flex;
+    flex-direction: row;
+    padding-left: 65px;
+    position: relative;
+    bottom: 40px;
+}
+#weaponCount
+{
+    padding-left: 10px;
+}
+#coinAndShieldUI
+{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding-left: 5px;
+    padding-right: 20px;
+    position: relative;
+    bottom: 10px;
+    left: 2px;
+}
+#country
+{
+    background-color: #21262D;
+    color: #CB7777;
+    font-size: 40px;
+    text-align: center;
+    width: 1264px;
+    border: solid;
+    border-width: 5px;
+    border-color: #CB7777;
+    position: relative;
+    bottom: 504px;
+    z-index: 1;
+}
+#cities
+{
+    color: #C69494;
+    background-color: #21262D;
+    font-size: 40px;
+    width: 1204px;
+    height: 385px;
+    border: solid;
+    border-color: #CB7777;
+    border-width: 5px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding-top: 30px;
+    padding-left: 30px;
+    padding-right: 30px;
+    position: relative;
+    bottom: 600px;
+}
+#shop
+{
+    color: white;
+    background-color: #21262D;
+    width: 700px;
+    height: 385px;
+    font-size: 40px;
+    border: solid;
+    border-width: 5px;
+    border-color: #CB7777;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding-top: 50px;
+    padding-left: 20px;
+    padding-right: 20px;
+    position: relative;
+    bottom: 670px;
+}
+#shopName
+{
+    color: #CB7777;
+    background-color: #21262D;
+    font-size: 40px;
+    text-align: center;
+    width: 740px;
+    border: solid;
+    border-width: 5px;
+    border-color: #CB7777;
+    position: relative;
+    bottom: 574px;
+    z-index: 1;
+}
+#globusIcon
+{
+    padding-top: 10px;
+    padding-left: 20px;
+    height: 100px;
+    width: 100px;
+}
+#topEcologyIcon
+{
+    height: 73px;
+    width: 73px;
+    padding-top: 20px;
+    padding-left: 950px;
+}
+#shieldIcon
+{
+    height: 73px;
+    width: 73px;
+}
+#ecologyIcon
+{
+    height: 73px;
+    width: 73px;
+}
+#weaponIcon
+{
+    height: 73px;
+    width: 73px;
+    transform: rotate(180deg);
+}
+#shopShield
+{
+    color: #3EA6E1;
+}
+#shieldCost
+{
+    color: #3EA6E1;
+}
+#shopEcology
+{
+    color: #3FC675;
+}
+#ecologyCost
+{
+    color: #3FC675;
+}
+#shopWeapon
+{
+    color: #D45454;
+}
+#weaponCost
+{
+    color: #D45454;
+}
+.shopImages
+{
+    display: flex;
+    flex-direction: column;
+    padding-top: 25px;
+    padding-bottom: 25px;
+    justify-content: space-between;
+}
+.shopNames
+{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.shopItemCost
+{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.shopButtons
+{
+    display: flex;
+    flex-direction: column;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    justify-content: space-between;
+}
+/* #shopName
+{
+    border: solid;
+    border-width: 5px;
+    text-align: center;
+}
+#buyShield
+{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+#buyBomb
+{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+#buyEco
+{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+} */
+.buttonStyle1
+{
+    display: inline-block;
+    outline: 0;
+    cursor: pointer;
+    border: 1px solid #3EA6E1;
+    color: #3EA6E1;
+    font-weight: 700;
+    background: #21262D;
+    padding: 8px;
+    font-size: 32px;
+    border-width: 5px;
+    border-radius: 20px;
+    height: 65px;
+    transition: all 80ms linear;
+}
+.buttonStyle1:hover{
+    box-shadow: 0 1px 3px 0 rgb(0 0 0 / 8%);
+    background: #29394a;
+}
+.buttonStyle2
+{
+    display: inline-block;
+    outline: 0;
+    cursor: pointer;
+    border: 1px solid #3FC675;
+    color: #3FC675;
+    font-weight: 700;
+    background: #21262D;
+    padding: 8px;
+    font-size: 32px;
+    border-width: 5px;
+    border-radius: 20px;
+    transition: all 80ms linear;
+}
+.buttonStyle2:hover{
+    box-shadow: 0 1px 3px 0 rgb(0 0 0 / 8%);
+    background: #29394a;
+}
+.buttonStyle3
+{
+    display: inline-block;
+    outline: 0;
+    cursor: pointer;
+    border: 1px solid #D45454;
+    color: #D45454;
+    font-weight: 700;
+    background: #21262D;
+    padding: 8px;
+    font-size: 32px;
+    border-width: 5px;
+    border-radius: 20px;
+    height: 65px;
+    transition: all 80ms linear;
+}
+.buttonStyle3:hover{
+    box-shadow: 0 1px 3px 0 rgb(0 0 0 / 8%);
+    background: #29394a;
+}
+#buyShieldButton
+{
+    height: 45px;
+    width: 110px;
+}
+#buyBombButton
+{
+    height: 45px;
+    width: 110px;
+}
+#buyEcoButton
+{
+    height: 45px;
+    width: 110px;
+}
+#prikaz
+{
+    color: white;
+    background-color: #21262D;
+    height: 435px;
+    width: 399px;
+    font-size: 40px;
+    border: solid;
+    border-width: 5px;
+    border-color: #CB7777;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding-left: 20px;
+    padding-right: 70px;
+    position: relative;
+    left: 770px;
+    bottom: 1254px;
+}
+#prikazName
+{
+    color: #CB7777;
+    background-color: #21262D;
+    font-size: 40px;
+    text-align: center;
+    width: 489px;
+    border: solid;
+    border-width: 5px;
+    border-color: #CB7777;
+    position: relative;
+    bottom: 1157px;
+    left: 770px;
+    z-index: 1;
+}
+.prikazButtons
+{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding-top: 70px;
+    padding-bottom: 20px;
+}
+.prikazNumbers
+{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding-top: 50px;
+    padding-bottom: 30px;
+}
+#placeShieldButton
+{
+    height: 105px;
+    width: 305px;
+    color: #3EA6E1;
+    border-color: #3EA6E1;
+}
+.shieldCount1
+{
+    color: #F283A5;
+}
+.shieldCount2
+{
+    color: #3EA6E1;
+}
+#placeBombButton
+{
+    height: 105px;
+    width: 305px;
+    color: #D45454;
+    border-color: #D45454;
+}
+.weaponCount1
+{
+    color: #9AC5A1;
+}
+.weaponCount2
+{
+    color: #D45454;
+}
+#makeMeetingButton
+{
+    height: 105px;
+    width: 305px;
+    color: #3FC675;
+    border-color: #3FC675;
+}
+#meetingCount
+{
+    color: #3FC675;
+}
