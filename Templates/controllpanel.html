@@ -2,17 +2,12 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!--АДАПТИВКА-->
-    <link rel="stylesheet" type="text/css" href="controllpanel.css">
+    <link rel="stylesheet" type="text/css" href="../static/css/controllpanel.css">
     <title>Document</title>
-    <script src="https://unpkg.com/react@16/umd/react.development.js"></script>
-    <script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
-    <script src="https://unpkg.com/babel-standalone@6.15.0/babel.min.js"></script>
     <div id="topPanel">
-        <img src="textures/globusIcon.png" alt="" id="globusIcon">
+        <img src="../static/textures/globusIcon.png" alt="" id="globusIcon">
         <p>World Domination</p>
-        <img src="textures/ecologyIcon.png" alt="" id="topEcologyIcon">
+        <img src="../static/textures/ecologyIcon.png" alt="" id="topEcologyIcon">
         <p id="ecologyLevel">100%</p>
         <p id="roundCount">Раунд 1</p>
     </div>
@@ -21,19 +16,19 @@
     <div class="mainInfo" id="mainInfoId">
         <div id="resources">
             <p id="countryName">USA</p>
-            <img src="textures/USAFlag.png" id="countryFlag">
+            <img src="../static/textures/USAFlag.png" id="countryFlag">
             <div id="coinAndShieldUI">
                 <div id="coinUI">
-                    <img src="textures/coinIcon.png" id="coinIcon">
+                    <img src="../static/textures/coinIcon.png" id="coinIcon">
                     <p id="coinCount">0</p>
                 </div>
                 <div id="shieldUI">
-                    <img src="textures/shieldIcon.png" id="resourcesShieldIcon">
+                    <img src="../static/textures/shieldIcon.png" id="resourcesShieldIcon">
                     <p id="shieldCount" class="shieldCount1">0</p>
                 </div>
             </div>
             <div id="weaponUI">
-                <img src="textures/weaponIcon.png" id="resourcesWeaponIcon">
+                <img src="../static/textures/weaponIcon.png" id="resourcesWeaponIcon">
                 <p id="weaponCount" class="weaponCount1">0</p>
             </div>
         </div>
@@ -87,9 +82,9 @@
                     <button id="buyEcoButton" class="buttonStyle1">Купить</button>
                 </div> -->
                 <div class="shopImages">
-                    <img src="textures/shieldIcon.png" id="shieldIcon">
-                    <img src="textures/ecologyIcon.png" id="ecologyIcon">
-                    <img src="textures/weaponIcon.png" id="weaponIcon">
+                    <img src="../static/textures/shieldIcon.png" id="shieldIcon">
+                    <img src="../static/textures/ecologyIcon.png" id="ecologyIcon">
+                    <img src="../static/textures/weaponIcon.png" id="weaponIcon">
                 </div>
                 <div class="shopNames">
                     <p id="shopShield">Щит</p>
@@ -124,7 +119,7 @@
     </div>
     <div id="root"></div>
     <script src="controllpanel.js"></script>
-    <script type="text/babel"> 
+    <script type="text/babel" src="../static/js/controllpanel.js"> 
     // const App = () => {
     //     return <p>Всем привет, аа</p>
     // }
