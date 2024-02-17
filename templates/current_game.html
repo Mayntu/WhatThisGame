@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <div>
+        <h1>current game</h1>
+    </div>
+
+    
+    <div class="main-container">
+        <h1>code: {{ context.game.code }}</h1>
+        <h2>lobby name {{ context.game.name }}</h2>
+        <h3>owner id: {{ context.game.root }}</h3>
+        <h4>players count: <span>{{ context.game.current_players }}</span>/<span>{{ context.game.max_players }}</span></h4>
+        <h5>status: waiting...</h5>
+    </div>
+
+    
+    <script></script>
+</body>
+</html>
