@@ -9,11 +9,11 @@ from flask import (
 #     DATABASE as db
 # )
 import json
-from services.database.countries import (
-    Country,
-    to_country,
-    to_countries
-)
+# from services.database.countries import (
+#     Country,
+#     to_country,
+#     to_countries
+# )
 from services.database.models import (
     User,
     GameLobby,
@@ -78,7 +78,10 @@ def current_game():
         current_game = session_db.query(GameLobby).get(int(session.get("current_game_id")))
         context : dict = {}
         context["game"] = current_game.__dict__
-        print(context["game"])
+        context["is_root"] = False
+        if session.get("user_id") == current_game.root:
+            context["is_root"] = True
+        
         return render_template("current_game.html", context=context)
     
     return redirect("/createGame")
@@ -125,11 +128,31 @@ def api_create_game():
     if session.get("auth"):
         data = request.form
         game_name : str = data.get("game_name")
-        max_players = data.get("game_players_amount")
-        root_id : int = session.get("user_id")
-        game_lobby=GameLobby(game_name,root_id,max_players)
+
+        teams_count : str = data.get("teams_count")
+        teams_count : int = int(teams_count)
+
+        players_in_team : str = data.get("players_in_team_count")
+        players_in_team : int = int(players_in_team)
+
+        max_players : int = teams_count
+
+        root_id : int = int(session.get("user_id"))
+
+        game_lobby = GameLobby(
+            name=game_name,
+            root=root_id,
+            max_players=max_players,
+            teams_count=teams_count,
+            players_in_team=players_in_team
+        )
         session_db.add(game_lobby)
         session_db.commit()
+        
+        user : User = session_db.query(User).get(root_id)
+        user.game_id = game_lobby.pk
+        session_db.commit()
+        
         session["current_game_id"] = game_lobby.pk
         return redirect("/currentGame")
     
@@ -143,15 +166,42 @@ def api_join_game():
     lobbies = session_db.query(GameLobby).filter_by(code=code)
     if lobbies.count() > 0:
         lobby = lobbies[0]
-        lobby.current_players += 1
-        session_db.commit()
-        session["current_game_id"] = lobby.pk
-        return redirect("/currentGame")
+        if lobby.game_status == "waiting":
+            lobby.current_players += 1
+            session_db.commit()
+
+            user_id : int = int(session.get("user_id"))
+            user : User = session_db.query(User).get(user_id)
+            user.game_id = lobby.pk
+            session_db.commit()
+
+            session["current_game_id"] = lobby.pk
+            return redirect("/currentGame")
+        
+        return json.dumps({"status" : "game is started"})
     
     return json.dumps({"status" : "not valid code"})
+
+
+@app.route("/api/v1/startGame", methods=["GET"])
+def api_start_game():
+    data = request.form
+    lobby_id : str = session.get("current_game_id")
+    lobby_id : int = int(lobby_id)
+    lobby = session_db.query(GameLobby).get(lobby_id)
+    if lobby.root == session.get("user_id"):
+        lobby.game_status = "active"
+        session_db.commit()
+
+
+@app.route("/api/v1/chooseTeam", methods=["GET"])
+def api_choose_team():
+    data = request.form
+    team_id = data.get("team_id")
+    
 app.run(
     host="0.0.0.0",
-    port="5555",
+    port="5000",
     debug=True
 )
 

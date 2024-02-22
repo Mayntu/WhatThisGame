@@ -19,8 +19,22 @@
         <h4>players count: <span>{{ context.game.current_players }}</span>/<span>{{ context.game.max_players }}</span></h4>
         <h5>status: waiting...</h5>
     </div>
+    
+    
+    <div class="choose-team">
+        <h1>Количество комманд: {{ context.game.teams_count }}</h1>
+        <h1>Максимальное количество игроков на комманду: {{ context.game.players_in_team }}</h1>
+    </div>
+    <input type="text" id="teams_count_input" value="{{ context.game.teams_count }}" hidden>
+    <form action="">
+        {% if context.is_root %}
+            <input type="submit" value="start">
+        {% endif %}
+    </form>
 
     
-    <script></script>
+    <script>
+        let teams_count = document.querySelector("#teams_count_input");
+    </script>
 </body>
 </html>

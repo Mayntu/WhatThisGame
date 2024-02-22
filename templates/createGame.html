@@ -10,11 +10,17 @@
     
     <form action="/api/v1/createGame" method="POST">
         <input type="text" name="game_name" placeholder="Имя игры">
-        <select name="game_players_amount">
-            <option value="8">8</option>
-            <option value="10">10</option>
-            <option value="12">12</option>
-            <option value="15">15+</option>
+        <select name="teams_count" id="">
+            <option value="4">4</option>
+            <option value="5">5</option>
+            <option value="6">6</option>
+        </select>
+        <select name="players_in_team_count" id="">
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+            <option value="6">6</option>
         </select>
         <input type="submit">
     </form>
