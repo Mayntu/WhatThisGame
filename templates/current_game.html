@@ -24,6 +24,18 @@
     <div class="choose-team">
         <h1>Количество комманд: {{ context.game.teams_count }}</h1>
         <h1>Максимальное количество игроков на комманду: {{ context.game.players_in_team }}</h1>
+        <div class="teams">
+            {% for team_preset in context.team_presets %}
+            <div class="team-preset">
+                <h1>{{ team_preset.name }}</h1>
+                <img src="{{ team_preset.flag }}" alt="#">
+                <form action="/api/v1/chooseTeam">
+                    <input type="text" name="team_preset_id" value="{{ team_preset.pk }}">
+                    <input type="submit">
+                </form>
+            </div>
+            {% endfor %}
+        </div>
     </div>
     <input type="text" id="teams_count_input" value="{{ context.game.teams_count }}" hidden>
     <form action="">

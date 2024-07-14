@@ -17,6 +17,8 @@ import json
 from services.database.models import (
     User,
     GameLobby,
+    TeamPreset,
+    CityPreset,
     session_db
 )
 
@@ -79,6 +81,8 @@ def current_game():
         context : dict = {}
         context["game"] = current_game.__dict__
         context["is_root"] = False
+        context["team_presets"] = session_db.query(TeamPreset).all()[0:current_game.teams_count]
+        print(context["team_presets"])
         if session.get("user_id") == current_game.root:
             context["is_root"] = True
         
@@ -197,8 +201,9 @@ def api_start_game():
 @app.route("/api/v1/chooseTeam", methods=["GET"])
 def api_choose_team():
     data = request.form
-    team_id = data.get("team_id")
-    
+    team_preset_id = data.get("team_preset_id")
+
+
 app.run(
     host="0.0.0.0",
     port="5000",

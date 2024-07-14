@@ -110,3 +110,4 @@ Base.metadata.create_all(bind=engine)
 
 SessionDB = sessionmaker(bind=engine)
 session_db = SessionDB()
+# USA : TeamPreset = TeamPreset(name="USA", flag="static/textures/USAFlag.png")
